@@ -1,21 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import ImageCard from "./ImageCard";
+import { Container, Row } from "reactstrap";
 
 const SearchResults = ({ images }) => {
   return (
-    <div>
-      {images &&
-        images.map((image, index) => {
-          return (
-            <div key={index}>
-              <img src={image.largeImageURL} alt={image.tags} />
-              <Link to={{ pathname: `/image/${image.id}`, state: { image } }}>
-                BUTTON
-              </Link>
-            </div>
-          );
-        })}
-    </div>
+    <Container>
+      <Row>
+        {images &&
+          images.map((image, index) => {
+            return <ImageCard key={index} data={image} />;
+          })}
+      </Row>
+    </Container>
   );
 };
 export default SearchResults;

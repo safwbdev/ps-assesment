@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App">
         <SearchForm handleGetRequest={this.handleGetRequest} />
         {error ? (
-          <div>Please enter a search query</div>
+          <div className="error">Please enter a search query</div>
         ) : (
           <SearchResults images={images} />
         )}
