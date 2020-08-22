@@ -3,7 +3,7 @@ import "./App.css";
 import SearchForm from "./components/SearchForm";
 import SearchResults from "./components/SearchResults";
 
-const key = "";
+const getApiKey = process.env.REACT_APP_API_KEY;
 
 class App extends Component {
   state = {
@@ -15,7 +15,7 @@ class App extends Component {
 
     const searchQuery = e.target.elements.searchQuery.value;
 
-    const url = `https://pixabay.com/api/?key=${key}&q=${searchQuery}&image_type=photo&pretty=true`;
+    const url = `https://pixabay.com/api/?key=${getApiKey}&q=${searchQuery}&image_type=photo&pretty=true`;
 
     const request = await fetch(url);
 
