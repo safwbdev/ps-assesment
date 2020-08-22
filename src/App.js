@@ -33,8 +33,6 @@ class App extends Component {
     return (
       <div className="App">
         <SearchForm handleGetRequest={this.handleGetRequest} />
-        {}
-
         {error ? (
           <div>Please enter a search query</div>
         ) : (
